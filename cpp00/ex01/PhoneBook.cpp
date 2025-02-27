@@ -96,25 +96,49 @@ void PhoneBook::searchContact()
 {
     if (totalContacts == 0)
     {
-        std::cout << "sorry baby phonebook is empty" << std::endl;
+        std::cout << "Phonebook is empty, baby\n";
         return;
     }
-    std::cout << "| Index | First Name | Last Name  | Nickname  |\n";
-    std::cout << "--------------------------------------------" << std::endl;
+
+    std::cout << "|  Index  | First Name | Last Name  | Nickname  |\n";
+    std::cout << "----------------------------------------------\n";
 
     for (int i = 0; i < totalContacts; i++)
     {
-        std::cout << "| " << std::setw(10) << i << " | "
+        std::cout << "| " << std::setw(8) << i << " | "
                   << std::setw(10) << formatWidth(contacts[i].getFirstName()) << " | "
                   << std::setw(10) << formatWidth(contacts[i].getLastName()) << " | "
-                  << std::setw(10) << formatWidth(contacts[i].getNickName()) << " |" << std::endl;
+                  << std::setw(10) << formatWidth(contacts[i].getNickName()) << " |\n";
     }
+
     std::string input;
-    int selectedIndex;
+    int selectedIndex = -1;
+
     while (true)
     {
-        std::cout << "Enter index baby: ";
+        std::cout << "Enter index (0-" << totalContacts - 1 << "), baby: ";
         std::getline(std::cin, input);
-        
+
+        if (!isDigitOnly(input)) 
+        {
+            std::cout << "Invalid input, baby Enter only numbers\n";
+            continue;
+        }
+
+        selectedIndex = atoi(input.c_str());
+
+        if (selectedIndex < 0 || selectedIndex >= totalContacts)
+        {
+            std::cout << "Invalid index, baby Choose a number between 0 and " << totalContacts - 1 << ".\n";
+            continue;
+        }
+
+        break;
     }
+
+    std::cout << "First Name: " << contacts[selectedIndex].getFirstName() << "\n";
+    std::cout << "Last Name: " << contacts[selectedIndex].getLastName() << "\n";
+    std::cout << "Nickname: " << contacts[selectedIndex].getNickName() << "\n";
+    std::cout << "Phone Number: " << contacts[selectedIndex].getPhoneNumber() << "\n";
+    std::cout << "Darkest Secret: " << contacts[selectedIndex].getDarkestSecret() << "\n";
 }
