@@ -16,13 +16,13 @@ private:
 public:
     void setFirstName(std::string firstName);
     void setLastName(std::string lastName);
-    void setNickname(std::string nickname);
+    void setNickName(std::string nickname);
     void setPhoneNumber(std::string phoneNumber);
     void setDarkestSecret(std::string darkestSecret);
 
     std::string getFirstName() const;
     std::string getLastName() const;
-    std::string getNickname() const;
+    std::string getNickName() const;
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
 };
