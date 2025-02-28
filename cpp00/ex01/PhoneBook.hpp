@@ -2,7 +2,6 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <iostream>
 #include <iomanip>
 
 class PhoneBook
@@ -14,7 +13,7 @@ private:
 
 public:
     PhoneBook();
-    void addContact();
-    void searchContact();
+    int addContact();
+    int searchContact();
 };
 #endif
