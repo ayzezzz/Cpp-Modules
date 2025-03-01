@@ -1,6 +1,5 @@
 #include "Contact.hpp"
 
-
 void Contact::setFirstName(std::string firstName) { this->firstName = firstName; }
 void Contact::setLastName(std::string lastName) { this->lastName = lastName; }
 void Contact::setNickName(std::string nickname) { this->nickname = nickname; }

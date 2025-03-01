@@ -6,14 +6,14 @@ PhoneBook::PhoneBook()
     totalContacts = 0;
 }
 
-bool isDigitOnly(const std::string &str)
+bool isDigitOnly(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
     {
-        if (!str.empty() && std::all_of(str.begin(), str.end(), ::isdigit))
-            return true;
+        if (!isdigit(str[i]))
+            return false;
     }
-    return false;
+    return true;
 }
 
 int PhoneBook::addContact()
@@ -108,7 +108,7 @@ int PhoneBook::searchContact()
 
     for (int i = 0; i < totalContacts; i++)
     {
-        std::cout << "| " << std::setw(8) << i << " | "
+        std::cout << "| " << std::setw(10) << i << " | "
                   << std::setw(10) << formatWidth(contacts[i].getFirstName()) << " | "
                   << std::setw(10) << formatWidth(contacts[i].getLastName()) << " | "
                   << std::setw(10) << formatWidth(contacts[i].getNickName()) << " | " << std::endl;
@@ -137,7 +137,6 @@ int PhoneBook::searchContact()
             std::cout << "Invalid index, baby 🦧 Choose a number between 0 and " << totalContacts - 1 << std::endl;
             continue;
         }
-
         break;
     }
 
