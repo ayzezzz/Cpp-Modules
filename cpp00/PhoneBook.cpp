@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/03 16:06:00 by zayaz             #+#    #+#             */
+/*   Updated: 2025/03/03 17:40:24 by zayaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
@@ -29,7 +41,7 @@ int PhoneBook::addContact()
             return 0;
         if (!input.empty())
             break;
-        std::cout << "Empty, sorry baby 🦧" << std::endl;
+        std::cout << "Empty, sorry baby 🦕" << std::endl;
     }
     newContact.setFirstName(input);
 
@@ -41,7 +53,7 @@ int PhoneBook::addContact()
             return 0;
         if (!input.empty())
             break;
-        std::cout << "Empty, sorry baby 🦧" << std::endl;
+        std::cout << "Empty, sorry baby 🦕" << std::endl;
     }
     newContact.setLastName(input);
 
@@ -53,7 +65,7 @@ int PhoneBook::addContact()
             return 0;
         if (!input.empty())
             break;
-        std::cout << "Empty, sorry baby 🦧" << std::endl;
+        std::cout << "Empty, sorry baby 🦕" << std::endl;
     }
     newContact.setNickName(input);
 
@@ -65,7 +77,7 @@ int PhoneBook::addContact()
             return 0;
         if (isDigitOnly(input))
             break;
-        std::cout << "Only numbers allowed, baby 🦧" << std::endl;
+        std::cout << "Only numbers allowed, baby 🦕" << std::endl;
     }
     newContact.setPhoneNumber(input);
 
@@ -77,7 +89,7 @@ int PhoneBook::addContact()
             return 0;
         if (!input.empty())
             break;
-        std::cout << "Empty, sorry baby 🦧" << std::endl;
+        std::cout << "Empty, sorry baby 🦕" << std::endl;
     }
     newContact.setDarkestSecret(input);
 
@@ -86,7 +98,6 @@ int PhoneBook::addContact()
     if (totalContacts < 8)
         totalContacts++;
     std::cout << "Contact added, baby 🍄" << std::endl;
-
     return 1;
 }
 
@@ -99,19 +110,19 @@ int PhoneBook::searchContact()
 {
     if (totalContacts == 0)
     {
-        std::cout << "Phonebook is empty, baby 🦧" << std::endl;
-        return 0;
+        std::cout << "Phonebook is empty, baby 🦕" << std::endl;
+        return 1;
     }
-    std::cout << "🍄=================================================🍄" << std::endl;
-    std::cout << "     Index | First Name | Last Name  |  Nickname  |" << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "🍄=======================================🍄" << std::endl;
+    std::cout << "  Index   |First Name| Last Name| Nickname |" << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
 
     for (int i = 0; i < totalContacts; i++)
     {
-        std::cout << "| " << std::setw(10) << i << " | "
-                  << std::setw(10) << formatWidth(contacts[i].getFirstName()) << " | "
-                  << std::setw(10) << formatWidth(contacts[i].getLastName()) << " | "
-                  << std::setw(10) << formatWidth(contacts[i].getNickName()) << " | " << std::endl;
+        std::cout << "|" << std::setw(10) << i << "|"
+                  << std::setw(10) << formatWidth(contacts[i].getFirstName()) << "|"
+                  << std::setw(10) << formatWidth(contacts[i].getLastName()) << "|"
+                  << std::setw(10) << formatWidth(contacts[i].getNickName()) << "|" << std::endl;
     }
 
     std::string input;
@@ -124,17 +135,17 @@ int PhoneBook::searchContact()
         if (std::cin.eof())
             return 0;
 
-        if (!isDigitOnly(input))
+        if (!isDigitOnly(input) ||input.empty())
         {
-            std::cout << "Invalid input, baby. Enter only numbers 🦧" << std::endl;
+            std::cout << "Invalid input, baby. Enter only numbers 🦕" << std::endl;
             continue;
         }
 
-        selectedIndex = std::stoi(input);
+        selectedIndex = atoi(input.c_str()); 
 
         if (selectedIndex < 0 || selectedIndex >= totalContacts)
         {
-            std::cout << "Invalid index, baby 🦧 Choose a number between 0 and " << totalContacts - 1 << std::endl;
+            std::cout << "Invalid index, baby 🦕 Choose a number between 0 and " << totalContacts - 1 << std::endl;
             continue;
         }
         break;
