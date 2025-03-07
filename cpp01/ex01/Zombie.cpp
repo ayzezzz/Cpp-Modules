@@ -1,6 +1,9 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie() {}
+Zombie::Zombie() 
+{
+    std::cout << name << "knrya: created 🌚" << std::endl;
+}
 
 Zombie::~Zombie()
 {
