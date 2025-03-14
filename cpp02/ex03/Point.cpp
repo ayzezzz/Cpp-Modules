@@ -14,10 +14,10 @@ Point &Point::operator=(const Point &other){
 Point::~Point(){}
 
 Fixed Point::getX() const{
-    return Fixed();
+    return _x;
 }
 
 Fixed Point::getY() const{
-    return Fixed();
+    return _y;
 }
 
