@@ -6,7 +6,7 @@
 /*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:45:12 by zayaz             #+#    #+#             */
-/*   Updated: 2025/03/16 16:45:13 by zayaz            ###   ########.fr       */
+/*   Updated: 2025/03/16 17:28:39 by zayaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap " << name << " is destroyed!" << std::endl;
+    std::cout << "ClapTrap " << name << " destroyed" << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
 {
     if (energyPoints <= 0 || hitPoints <= 0)
     {
-        std::cout << "ClapTrap " << name << " can't attack!" << std::endl;
+        std::cout << "ClapTrap " << name << " can't attack" << std::endl;
         return;
     }
     std::cout << "ClapTrap " << name << " attacks " << target
@@ -61,7 +61,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (hitPoints == 0)
     {
-        std::cout << "ClapTrap " << name << " is already down!" << std::endl;
+        std::cout << "ClapTrap " << name << " is already down" << std::endl;
         return;
     }
 
