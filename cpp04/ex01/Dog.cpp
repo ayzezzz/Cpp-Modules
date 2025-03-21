@@ -28,7 +28,7 @@ Dog::~Dog() {
 }
 
 void Dog::makeSound() const {
-    std::cout << "Woof Woof" << std::endl;
+    std::cout << "Woof Woof 🐶" << std::endl;
 }
 void Dog::setIdea(int index, const std::string& idea) {
     this->brain->setIdea(index, idea);
