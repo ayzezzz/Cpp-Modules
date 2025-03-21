@@ -41,7 +41,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
         energyPoints = other.energyPoints;
         attackDamage = other.attackDamage;
 
-        std::cout << "DiamondTrap Assignment operator called" << std::endl;
+        std::cout << "DiamondTrap " << name << " Assignment operator called" << std::endl;
     }
     return *this;
 }

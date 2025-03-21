@@ -24,8 +24,8 @@ ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoints(10), energyP
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "Copy constructor called" << std::endl;
     *this = other;
+    std::cout << "ClapTrap " << name << " copied" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
