@@ -6,7 +6,7 @@
 /*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 13:15:17 by zayaz             #+#    #+#             */
-/*   Updated: 2025/03/16 16:26:35 by zayaz            ###   ########.fr       */
+/*   Updated: 2025/03/16 13:31:57 by zayaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static Fixed area(Point const a, Point const b, Point const c)
 {
-    Fixed x1 = a.getX(), y1 = a.getY();
+     Fixed x1 = a.getX(), y1 = a.getY();
     Fixed x2 = b.getX(), y2 = b.getY();
     Fixed x3 = c.getX(), y3 = c.getY();
     

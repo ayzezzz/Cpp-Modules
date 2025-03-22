@@ -1,4 +1,4 @@
-NAME = zombie_horde
+NAME = ZombieHorde
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
