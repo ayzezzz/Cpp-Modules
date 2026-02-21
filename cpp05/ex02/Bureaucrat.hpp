@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+class AForm;
+
 class Bureaucrat
 {
 private:
@@ -16,22 +18,24 @@ public:
     Bureaucrat &operator=(const Bureaucrat &other);
     ~Bureaucrat();
 
-    const std::string& getName() const;
+    std::string getName() const;
     int getGrade() const;
 
     void incrementGrade();
     void decrementGrade();
 
+    void signForm(AForm &f);
+    void executeForm(AForm const &form);
+
     class GradeTooHighException : public std::exception
     {
     public:
-        const char *what() const throw();
+        virtual const char *what() const throw();
     };
-
     class GradeTooLowException : public std::exception
     {
     public:
-        const char *what() const throw();
+        virtual const char *what() const throw();
     };
 };
 
