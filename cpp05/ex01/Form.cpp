@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/22 12:13:35 by zayaz             #+#    #+#             */
+/*   Updated: 2026/02/22 12:51:18 by zayaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+Form::Form() : name("nameless"), isSigned(false), gradeToSign(150), gradeToExecute(150) {}
 
 Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) 
     : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
@@ -48,8 +61,8 @@ const char* Form::GradeTooLowException::what() const throw() {
 
 std::ostream& operator<<(std::ostream& os, const Form& f) {
     os << "Form: " << f.getName() 
-       << ", signed: " << (f.getIsSigned() ? "yes" : "no")
-       << ", grade to sign: " << f.getGradeToSign()
-       << ", grade to execute: " << f.getGradeToExecute();
+       << ", signed: " << (f.getIsSigned() ? "yes" : "no");
+    os << ", grade to sign: " << f.getGradeToSign()
+       << ", grade to execute: " << f.getGradeToExecute() << std::endl;
     return os;
 }

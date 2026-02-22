@@ -1,12 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/22 12:15:11 by zayaz             #+#    #+#             */
+/*   Updated: 2026/02/22 16:05:38 by zayaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 
-Intern::Intern() {}
+Intern::Intern(){}
 
-Intern::Intern(const Intern& copy) {
-    *this = copy;
+Intern::Intern(const Intern &other){
+    *this = other;
 }
 
-Intern& Intern::operator=(const Intern& src) {
+Intern& Intern::operator=(const Intern &other){
+    if(this != &other)
+        return *this;
     return *this;
 }
 
