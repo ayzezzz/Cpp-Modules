@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/11 12:19:30 by zayaz             #+#    #+#             */
+/*   Updated: 2026/03/11 12:31:22 by zayaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
 #include <algorithm> 
 #include <stdexcept> 
 #include <limits>    
-#include <iostream>
-
 
 Span::Span() : _n(0) {}
 
@@ -48,18 +58,13 @@ int Span::shortestSpan() {
     std::sort(sorted.begin(), sorted.end());
 
     int minDiff = std::numeric_limits<int>::max();
-    int val1 = 0, val2 = 0; 
 
     for (size_t i = 0; i < sorted.size() - 1; ++i) {
         int currentDiff = sorted[i + 1] - sorted[i];
         if (currentDiff < minDiff) {
             minDiff = currentDiff;
-            val1 = sorted[i]; 
-            val2 = sorted[i + 1];
         }
     }
-
-    std::cout << "\nvall1: " << val1 << "\nval2: " << val2 << std::endl;
     
     return minDiff;
 }
