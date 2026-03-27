@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zayaz <zayaz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/23 10:04:03 by zayaz             #+#    #+#             */
+/*   Updated: 2026/03/23 10:04:04 by zayaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 
 PmergeMe::PmergeMe() : _vecTime(0), _deqTime(0) {}
@@ -29,7 +41,7 @@ void PmergeMe::fillVector(int ac, char **av)
 
         long val = std::strtol(av[i], NULL, 10);
 
-        if (val < 0 || val > INT_MAX)
+        if (val < 0 || val > std::numeric_limits<int>::max())
             throw ErrorException();
 
         _vec.push_back(static_cast<int>(val));
@@ -47,7 +59,7 @@ void PmergeMe::fillDeque(int ac, char **av)
 
         long val = std::strtol(av[i], NULL, 10);
 
-        if (val < 0 || val > INT_MAX)
+        if (val < 0 || val > std::numeric_limits<int>::max())
             throw ErrorException();
 
         _deq.push_back(static_cast<int>(val));
